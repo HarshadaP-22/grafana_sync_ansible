@@ -1,0 +1,58 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "BINOCS2",
+    "tags": ["saas", "demo"],
+    "timezone": "browser",
+    "schemaVersion": 36,
+    "version": 0,
+    "refresh": "10s",
+    "panels": [
+      {
+        "type": "stat",
+        "title": "Application Status",
+        "gridPos": { "x": 0, "y": 0, "w": 6, "h": 4 },
+        "targets": [
+          {
+            "expr": "1",
+            "refId": "A"
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "title": "API Latency (ms)",
+        "gridPos": { "x": 6, "y": 0, "w": 12, "h": 8 },
+        "targets": [
+          {
+            "expr": "random() * 200",
+            "refId": "B"
+          }
+        ]
+      },
+      {
+        "type": "timeseries",
+        "title": "Error Rate (%)",
+        "gridPos": { "x": 0, "y": 4, "w": 12, "h": 8 },
+        "targets": [
+          {
+            "expr": "random() * 10",
+            "refId": "C"
+          }
+        ]
+      },
+      {
+        "type": "stat",
+        "title": "Active Users",
+        "gridPos": { "x": 12, "y": 8, "w": 6, "h": 4 },
+        "targets": [
+          {
+            "expr": "random() * 1000",
+            "refId": "D"
+          }
+        ]
+      }
+    ]
+  },
+  "overwrite": true
+}
