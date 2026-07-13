@@ -1,0 +1,45 @@
+{
+  "dashboard": {
+    "id": null,
+    "uid": "myapp-standard-dashboard",
+    "title": "MYAPP Standard Dashboard",
+    "tags": [
+      "myapp",
+      "standard",
+      "ansible",
+      "github-sync"
+    ],
+    "timezone": "browser",
+    "schemaVersion": 39,
+    "version": 1,
+    "refresh": "30s",
+    "panels": [
+      {
+        "id": 1,
+        "type": "timeseries",
+        "title": "MYAPP Availability",
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 0
+        },
+        "targets": []
+      },
+      {
+        "id": 2,
+        "type": "stat",
+        "title": "MYAPP Error Count",
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 0
+        },
+        "targets": []
+      }
+    ]
+  },
+  "folderUid": "myapp",
+  "overwrite": true
+}
