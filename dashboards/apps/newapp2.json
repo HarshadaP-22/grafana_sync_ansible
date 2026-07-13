@@ -1,0 +1,45 @@
+{
+  "dashboard": {
+    "id": null,
+    "uid": "newapp2-standard-dashboard",
+    "title": "NEWAPP2 Standard Dashboard",
+    "tags": [
+      "newapp2",
+      "standard",
+      "ansible",
+      "github-sync"
+    ],
+    "timezone": "browser",
+    "schemaVersion": 39,
+    "version": 1,
+    "refresh": "30s",
+    "panels": [
+      {
+        "id": 1,
+        "type": "timeseries",
+        "title": "NEWAPP2 Availability",
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 0
+        },
+        "targets": []
+      },
+      {
+        "id": 2,
+        "type": "stat",
+        "title": "NEWAPP2 Error Count",
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 0
+        },
+        "targets": []
+      }
+    ]
+  },
+  "folderUid": "newapp2",
+  "overwrite": true
+}
