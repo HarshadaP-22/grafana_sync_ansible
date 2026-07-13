@@ -1,0 +1,45 @@
+{
+  "dashboard": {
+    "id": null,
+    "uid": "myapp6-standard-dashboard",
+    "title": "MYAPP6 Standard Dashboard",
+    "tags": [
+      "myapp6",
+      "standard",
+      "ansible",
+      "github-sync"
+    ],
+    "timezone": "browser",
+    "schemaVersion": 39,
+    "version": 1,
+    "refresh": "30s",
+    "panels": [
+      {
+        "id": 1,
+        "type": "timeseries",
+        "title": "MYAPP6 Availability",
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 0
+        },
+        "targets": []
+      },
+      {
+        "id": 2,
+        "type": "stat",
+        "title": "MYAPP6 Error Count",
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 0
+        },
+        "targets": []
+      }
+    ]
+  },
+  "folderUid": "myapp6",
+  "overwrite": true
+}
