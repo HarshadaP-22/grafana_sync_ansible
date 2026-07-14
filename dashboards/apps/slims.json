@@ -25,8 +25,9 @@
   "refresh": "10s",
   "schemaVersion": 41,
   "tags": [
-    "saas",
-    "demo"
+    "SLIMS",
+    "standard",
+    "ansible"
   ],
   "templating": {
     "list": []
@@ -37,8 +38,8 @@
   },
   "timepicker": {},
   "timezone": "browser",
-  "title": "SLIMS",
-  "uid": "SLIMS-dashboard",
+  "title": "GSC Standard Dashboard",
+  "uid": "gsc-standard-dashboard",
   "version": 1,
   "weekStart": ""
 }
