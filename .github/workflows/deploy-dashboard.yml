@@ -1,0 +1,24 @@
+name: Grafana Git Sync Notification
+
+on:
+  push:
+    paths:
+      - 'dashboards/apps/**/*.json'
+      - 'dashboards/templates/*.json'
+      - 'scripts/**'
+      - 'ansible/**'
+      - '.github/workflows/deploy-dashboard.yml'
+  workflow_dispatch:
+
+jobs:
+  info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Information
+        run: |
+          echo "Dashboards are validated locally by scripts/create_dashboard.sh before push."
+          echo "Grafana Git Sync should pull the dashboard JSON files from this repository."
+          echo "This workflow is intentionally not running Ansible to avoid duplicate validation."
