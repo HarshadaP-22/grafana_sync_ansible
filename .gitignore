@@ -1,0 +1,9 @@
+*.zip
+.env
+env.env.local
+.DS_Store
+__pycache__/
+ansible/
+scripts/
+dashboards/templates/
+.env
