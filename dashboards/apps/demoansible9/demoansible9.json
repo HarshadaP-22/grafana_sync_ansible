@@ -28,7 +28,7 @@
     },
     {
       "id": 2,
-      "type": "timeseries",
+      "type": "stat",
       "title": "CPU Usage",
       "gridPos": {
         "h": 8,
@@ -37,14 +37,23 @@
         "y": 0
       },
       "datasource": {
-        "type": "-- Grafana --"
+        "type": "-- Grafana --",
+        "uid": "-- Grafana --"
       },
       "targets": [
         {
           "refId": "A",
           "queryType": "randomWalk"
         }
-      ]
+      ],
+      "options": {
+        "reduceOptions": {
+          "values": false,
+          "calcs": [
+            "lastNotNull"
+          ]
+        }
+      }
     },
     {
       "id": 3,
