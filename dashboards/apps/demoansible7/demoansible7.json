@@ -1,112 +1,78 @@
 {
-  "uid": "demoansible7",
-  "title": "demoansible7 Monitoring Dashboard",
+  "uid": "demoansible7-home",
+  "title": "demoansible7 Home Dashboard",
+  "timezone": "browser",
   "schemaVersion": 39,
   "version": 1,
   "refresh": "30s",
   "tags": [
     "demoansible7",
-    "monitoring",
-    "automation"
+    "self-service",
+    "git-sync"
   ],
   "panels": [
     {
       "id": 1,
-      "type": "text",
-      "title": "Introduction",
+      "type": "timeseries",
+      "title": "CPU Usage",
       "gridPos": {
-        "h": 4,
-        "w": 24,
+        "h": 8,
+        "w": 12,
         "x": 0,
         "y": 0
       },
-      "options": {
-        "mode": "markdown",
-        "content": "# demoansible7 Monitoring Dashboard\n\nThis dashboard provides real-time monitoring and health status for demoansible7."
-      }
+      "datasource": {
+        "type": "-- Grafana --"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "queryType": "randomWalk"
+        }
+      ]
     },
     {
       "id": 2,
-      "title": "CPU Usage",
       "type": "timeseries",
+      "title": "Memory Usage",
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
       "datasource": {
-        "name": "-- Grafana --"
+        "type": "-- Grafana --"
       },
       "targets": [
         {
           "refId": "A",
           "queryType": "randomWalk"
         }
-      ],
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 0,
-        "y": 4
-      }
+      ]
     },
     {
       "id": 3,
-      "title": "Memory Usage",
       "type": "timeseries",
+      "title": "Application Health",
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
       "datasource": {
-        "name": "-- Grafana --"
+        "type": "-- Grafana --"
       },
       "targets": [
         {
           "refId": "A",
           "queryType": "randomWalk"
         }
-      ],
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 8,
-        "y": 4
-      }
+      ]
     },
     {
       "id": 4,
-      "title": "Request Rate",
-      "type": "timeseries",
-      "datasource": {
-        "name": "-- Grafana --"
-      },
-      "targets": [
-        {
-          "refId": "A",
-          "queryType": "randomWalk"
-        }
-      ],
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 16,
-        "y": 4
-      }
-    },
-    {
-      "id": 5,
-      "title": "Application Health",
-      "type": "gauge",
-      "datasource": {
-        "name": "-- Grafana --"
-      },
-      "targets": [
-        {
-          "refId": "A",
-          "queryType": "randomWalk"
-        }
-      ],
-      "gridPos": {
-        "h": 6,
-        "w": 6,
-        "x": 0,
-        "y": 12
-      }
-    },
-    {
-      "id": 6,
       "title": "Error Rate",
       "type": "gauge",
       "datasource": {
@@ -123,86 +89,6 @@
         "w": 6,
         "x": 6,
         "y": 12
-      }
-    },
-    {
-      "id": 7,
-      "title": "Active Users",
-      "type": "stat",
-      "datasource": {
-        "name": "-- Grafana --"
-      },
-      "targets": [
-        {
-          "refId": "A",
-          "queryType": "randomWalk"
-        }
-      ],
-      "gridPos": {
-        "h": 6,
-        "w": 6,
-        "x": 12,
-        "y": 12
-      }
-    },
-    {
-      "id": 8,
-      "title": "Transactions",
-      "type": "stat",
-      "datasource": {
-        "name": "-- Grafana --"
-      },
-      "targets": [
-        {
-          "refId": "A",
-          "queryType": "randomWalk"
-        }
-      ],
-      "gridPos": {
-        "h": 6,
-        "w": 6,
-        "x": 18,
-        "y": 12
-      }
-    },
-    {
-      "id": 9,
-      "title": "Server Requests",
-      "type": "timeseries",
-      "datasource": {
-        "name": "-- Grafana --"
-      },
-      "targets": [
-        {
-          "refId": "A",
-          "queryType": "randomWalk"
-        }
-      ],
-      "gridPos": {
-        "h": 10,
-        "w": 16,
-        "x": 0,
-        "y": 18
-      }
-    },
-    {
-      "id": 10,
-      "title": "Service Breakdown",
-      "type": "barchart",
-      "datasource": {
-        "name": "-- Grafana --"
-      },
-      "targets": [
-        {
-          "refId": "A",
-          "queryType": "randomWalk"
-        }
-      ],
-      "gridPos": {
-        "h": 10,
-        "w": 8,
-        "x": 16,
-        "y": 18
       }
     }
   ]
