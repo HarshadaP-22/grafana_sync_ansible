@@ -1,11 +1,11 @@
 {
-  "uid": "{{app_name}}",
-  "title": "{{app_name}} Monitoring Dashboard",
+  "uid": "demoansible7",
+  "title": "demoansible7 Monitoring Dashboard",
   "schemaVersion": 39,
   "version": 1,
   "refresh": "30s",
   "tags": [
-    "{{app_name}}",
+    "demoansible7",
     "monitoring",
     "automation"
   ],
@@ -22,7 +22,7 @@
       },
       "options": {
         "mode": "markdown",
-        "content": "# {{app_name}} Monitoring Dashboard\n\nThis dashboard provides real-time monitoring and health status for {{app_name}}."
+        "content": "# demoansible7 Monitoring Dashboard\n\nThis dashboard provides real-time monitoring and health status for demoansible7."
       }
     },
     {
