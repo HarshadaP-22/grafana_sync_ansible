@@ -1,70 +1,209 @@
 {
-  "uid": "demoansible6-home",
-  "title": "demoansible6 Home Dashboard",
-  "timezone": "browser",
+  "uid": "demoansible6",
+  "title": "demoansible6 Monitoring Dashboard",
   "schemaVersion": 39,
   "version": 1,
   "refresh": "30s",
   "tags": [
     "demoansible6",
-    "self-service",
-    "git-sync"
+    "monitoring",
+    "automation"
   ],
   "panels": [
     {
       "id": 1,
-      "type": "timeseries",
-      "title": "CPU Usage",
+      "type": "text",
+      "title": "Introduction",
       "gridPos": {
-        "h": 8,
-        "w": 12,
+        "h": 4,
+        "w": 24,
         "x": 0,
         "y": 0
       },
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
-      "targets": [
-        {
-          "refId": "A",
-          "expr": "100 - (avg by(instance) (rate(node_cpu_seconds_total{mode=\"idle\"}[5m])) * 100)",
-          "legendFormat": "{{instance}}"
-        }
-      ]
+      "options": {
+        "mode": "markdown",
+        "content": "# demoansible6 Monitoring Dashboard\n\nThis dashboard provides real-time monitoring and health status for demoansible6."
+      }
     },
     {
       "id": 2,
+      "title": "CPU Usage",
       "type": "timeseries",
-      "title": "Memory Usage",
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 0
-      },
       "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "name": "-- Grafana --"
       },
       "targets": [
         {
           "refId": "A",
-          "expr": "(1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) * 100",
-          "legendFormat": "{{instance}}"
+          "queryType": "randomWalk"
         }
-      ]
-    }
-  ],
-  "templating": {
-    "list": [
-      {
-        "name": "DS_PROMETHEUS",
-        "type": "datasource",
-        "query": "prometheus",
-        "current": {},
-        "label": "Prometheus Datasource"
+      ],
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 0,
+        "y": 4
       }
-    ]
-  }
+    },
+    {
+      "id": 3,
+      "title": "Memory Usage",
+      "type": "timeseries",
+      "datasource": {
+        "name": "-- Grafana --"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "queryType": "randomWalk"
+        }
+      ],
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 8,
+        "y": 4
+      }
+    },
+    {
+      "id": 4,
+      "title": "Request Rate",
+      "type": "timeseries",
+      "datasource": {
+        "name": "-- Grafana --"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "queryType": "randomWalk"
+        }
+      ],
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 16,
+        "y": 4
+      }
+    },
+    {
+      "id": 5,
+      "title": "Application Health",
+      "type": "gauge",
+      "datasource": {
+        "name": "-- Grafana --"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "queryType": "randomWalk"
+        }
+      ],
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 0,
+        "y": 12
+      }
+    },
+    {
+      "id": 6,
+      "title": "Error Rate",
+      "type": "gauge",
+      "datasource": {
+        "name": "-- Grafana --"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "queryType": "randomWalk"
+        }
+      ],
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 6,
+        "y": 12
+      }
+    },
+    {
+      "id": 7,
+      "title": "Active Users",
+      "type": "stat",
+      "datasource": {
+        "name": "-- Grafana --"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "queryType": "randomWalk"
+        }
+      ],
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 12,
+        "y": 12
+      }
+    },
+    {
+      "id": 8,
+      "title": "Transactions",
+      "type": "stat",
+      "datasource": {
+        "name": "-- Grafana --"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "queryType": "randomWalk"
+        }
+      ],
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 18,
+        "y": 12
+      }
+    },
+    {
+      "id": 9,
+      "title": "Server Requests",
+      "type": "timeseries",
+      "datasource": {
+        "name": "-- Grafana --"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "queryType": "randomWalk"
+        }
+      ],
+      "gridPos": {
+        "h": 10,
+        "w": 16,
+        "x": 0,
+        "y": 18
+      }
+    },
+    {
+      "id": 10,
+      "title": "Service Breakdown",
+      "type": "barchart",
+      "datasource": {
+        "name": "-- Grafana --"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "queryType": "randomWalk"
+        }
+      ],
+      "gridPos": {
+        "h": 10,
+        "w": 8,
+        "x": 16,
+        "y": 18
+      }
+    }
+  ]
 }
