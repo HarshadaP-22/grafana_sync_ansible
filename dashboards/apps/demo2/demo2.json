@@ -3,13 +3,15 @@
   "title": "demo2 - Web Application Dashboard",
   "tags": [
     "web",
-    "demo2"
+    "demo2",
+    "{{ENVIRONMENT}}"
   ],
   "timezone": "browser",
+  "editable": true,
+  "graphTooltip": 1,
+  "refresh": "30s",
   "schemaVersion": 39,
   "version": 1,
-  "editable": true,
-  "refresh": "30s",
   "time": {
     "from": "now-6h",
     "to": "now"
@@ -17,14 +19,14 @@
   "templating": {
     "list": [
       {
-        "name": "environment",
+        "name": "env",
         "label": "Environment",
         "type": "custom",
         "query": "DEV,QA,UAT,PROD",
         "current": {
           "selected": true,
-          "text": "PROD",
-          "value": "PROD"
+          "text": "{{ENVIRONMENT}}",
+          "value": "{{ENVIRONMENT}}"
         }
       }
     ]
@@ -32,41 +34,34 @@
   "panels": [
     {
       "id": 1,
-      "title": "Application Availability",
+      "title": "Availability %",
       "type": "stat",
       "gridPos": {
-        "h": 5,
+        "h": 4,
         "w": 6,
         "x": 0,
         "y": 0
       },
-      "targets": [],
-      "options": {
-        "colorMode": "value",
-        "graphMode": "none"
-      }
+      "targets": []
     },
     {
       "id": 2,
       "title": "Average Response Time",
       "type": "stat",
       "gridPos": {
-        "h": 5,
+        "h": 4,
         "w": 6,
         "x": 6,
         "y": 0
       },
-      "targets": [],
-      "options": {
-        "colorMode": "value"
-      }
+      "targets": []
     },
     {
       "id": 3,
       "title": "Requests Per Minute",
       "type": "stat",
       "gridPos": {
-        "h": 5,
+        "h": 4,
         "w": 6,
         "x": 12,
         "y": 0
@@ -75,10 +70,10 @@
     },
     {
       "id": 4,
-      "title": "Error Rate (%)",
+      "title": "Error Rate %",
       "type": "stat",
       "gridPos": {
-        "h": 5,
+        "h": 4,
         "w": 6,
         "x": 18,
         "y": 0
@@ -87,49 +82,49 @@
     },
     {
       "id": 5,
-      "title": "Response Time Trend",
+      "title": "Request Volume",
       "type": "timeseries",
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 5
+        "y": 4
       },
       "targets": []
     },
     {
       "id": 6,
-      "title": "Request Volume Trend",
+      "title": "Response Time Trend",
       "type": "timeseries",
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 5
+        "y": 4
       },
       "targets": []
     },
     {
       "id": 7,
-      "title": "HTTP Status Codes",
+      "title": "HTTP Status Distribution",
       "type": "piechart",
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 13
+        "y": 12
       },
       "targets": []
     },
     {
       "id": 8,
-      "title": "Top Failing URLs",
+      "title": "Top Failed Endpoints",
       "type": "table",
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 13
+        "y": 12
       },
       "targets": []
     }
