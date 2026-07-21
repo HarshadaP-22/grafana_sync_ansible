@@ -13,6 +13,21 @@
   "panels": [
     {
       "id": 1,
+      "type": "text",
+      "title": "Introduction",
+      "gridPos": {
+        "h": 4,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "options": {
+        "mode": "markdown",
+        "content": "# demoansible7 Monitoring Dashboard\n\nThis dashboard provides real-time monitoring and health status for demoansible7."
+      }
+    },
+    {
+      "id": 2,
       "type": "timeseries",
       "title": "CPU Usage",
       "gridPos": {
@@ -32,7 +47,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": 3,
       "type": "timeseries",
       "title": "Memory Usage",
       "gridPos": {
@@ -52,7 +67,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": 4,
       "type": "timeseries",
       "title": "Application Health",
       "gridPos": {
@@ -72,7 +87,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": 5,
       "title": "Error Rate",
       "type": "gauge",
       "datasource": {
@@ -87,7 +102,7 @@
       "gridPos": {
         "h": 6,
         "w": 6,
-        "x": 6,
+        "x": 0,
         "y": 12
       }
     }
