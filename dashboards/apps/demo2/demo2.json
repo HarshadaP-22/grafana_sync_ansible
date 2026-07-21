@@ -1,132 +1,70 @@
 {
-  "uid": "demo2",
-  "title": "demo2 - Web Application Dashboard",
-  "tags": [
-    "web",
-    "demo2",
-    "{{ENVIRONMENT}}"
-  ],
+  "uid": "demo2-home",
+  "title": "demo2 Home Dashboard",
   "timezone": "browser",
-  "editable": true,
-  "graphTooltip": 1,
-  "refresh": "30s",
   "schemaVersion": 39,
   "version": 1,
-  "time": {
-    "from": "now-6h",
-    "to": "now"
-  },
-  "templating": {
-    "list": [
-      {
-        "name": "env",
-        "label": "Environment",
-        "type": "custom",
-        "query": "DEV,QA,UAT,PROD",
-        "current": {
-          "selected": true,
-          "text": "{{ENVIRONMENT}}",
-          "value": "{{ENVIRONMENT}}"
-        }
-      }
-    ]
-  },
+  "refresh": "30s",
+  "tags": [
+    "demo2",
+    "self-service",
+    "git-sync"
+  ],
   "panels": [
     {
       "id": 1,
-      "title": "Availability %",
-      "type": "stat",
+      "type": "timeseries",
+      "title": "CPU Usage",
       "gridPos": {
-        "h": 4,
-        "w": 6,
+        "h": 8,
+        "w": 12,
         "x": 0,
         "y": 0
       },
-      "targets": []
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "100 - (avg by(instance) (rate(node_cpu_seconds_total{mode=\"idle\"}[5m])) * 100)",
+          "legendFormat": "{{instance}}"
+        }
+      ]
     },
     {
       "id": 2,
-      "title": "Average Response Time",
-      "type": "stat",
-      "gridPos": {
-        "h": 4,
-        "w": 6,
-        "x": 6,
-        "y": 0
-      },
-      "targets": []
-    },
-    {
-      "id": 3,
-      "title": "Requests Per Minute",
-      "type": "stat",
-      "gridPos": {
-        "h": 4,
-        "w": 6,
-        "x": 12,
-        "y": 0
-      },
-      "targets": []
-    },
-    {
-      "id": 4,
-      "title": "Error Rate %",
-      "type": "stat",
-      "gridPos": {
-        "h": 4,
-        "w": 6,
-        "x": 18,
-        "y": 0
-      },
-      "targets": []
-    },
-    {
-      "id": 5,
-      "title": "Request Volume",
       "type": "timeseries",
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 4
-      },
-      "targets": []
-    },
-    {
-      "id": 6,
-      "title": "Response Time Trend",
-      "type": "timeseries",
+      "title": "Memory Usage",
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 4
+        "y": 0
       },
-      "targets": []
-    },
-    {
-      "id": 7,
-      "title": "HTTP Status Distribution",
-      "type": "piechart",
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 12
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
       },
-      "targets": []
-    },
-    {
-      "id": 8,
-      "title": "Top Failed Endpoints",
-      "type": "table",
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 12
-      },
-      "targets": []
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "(1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) * 100",
+          "legendFormat": "{{instance}}"
+        }
+      ]
     }
-  ]
+  ],
+  "templating": {
+    "list": [
+      {
+        "name": "DS_PROMETHEUS",
+        "type": "datasource",
+        "query": "prometheus",
+        "current": {},
+        "label": "Prometheus Datasource"
+      }
+    ]
+  }
 }
