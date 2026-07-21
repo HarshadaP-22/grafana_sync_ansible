@@ -37,14 +37,23 @@
         "y": 0
       },
       "datasource": {
-        "type": "-- Grafana --"
+        "type": "-- Grafana --",
+         "uid": "-- Grafana --"
       },
       "targets": [
         {
           "refId": "A",
           "queryType": "randomWalk"
         }
-      ]
+      ],
+       "options": {
+        "reduceOptions": {
+          "values": false,
+          "calcs": [
+            "lastNotNull"
+          ]
+        }
+      }
     },
     {
       "id": 3,
