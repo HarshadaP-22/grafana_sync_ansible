@@ -1,70 +1,137 @@
 {
   "uid": "demoansible5-home",
-  "title": "demoansible5 Home Dashboard",
-  "timezone": "browser",
+  "title": "demoansible5 Monitoring Dashboard",
   "schemaVersion": 39,
   "version": 1,
   "refresh": "30s",
   "tags": [
-    "demoansible5",
-    "self-service",
-    "git-sync"
+    "{{APP_SLUG}}",
+    "monitoring",
+    "automation"
   ],
   "panels": [
     {
       "id": 1,
-      "type": "timeseries",
-      "title": "CPU Usage",
+      "type": "text",
+      "title": "Introduction",
       "gridPos": {
-        "h": 8,
-        "w": 12,
+        "h": 4,
+        "w": 24,
         "x": 0,
         "y": 0
       },
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
-      "targets": [
-        {
-          "refId": "A",
-          "expr": "100 - (avg by(instance) (rate(node_cpu_seconds_total{mode=\"idle\"}[5m])) * 100)",
-          "legendFormat": "{{instance}}"
-        }
-      ]
+      "options": {
+        "mode": "markdown",
+        "content": "# demoansible5 Monitoring Dashboard\n\nThis dashboard provides real-time monitoring and health status for demoansible5."
+      }
     },
+
     {
       "id": 2,
+      "title": "CPU Usage",
       "type": "timeseries",
-      "title": "Memory Usage",
       "gridPos": {
         "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 0
-      },
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
-      "targets": [
-        {
-          "refId": "A",
-          "expr": "(1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) * 100",
-          "legendFormat": "{{instance}}"
-        }
-      ]
-    }
-  ],
-  "templating": {
-    "list": [
-      {
-        "name": "DS_PROMETHEUS",
-        "type": "datasource",
-        "query": "prometheus",
-        "current": {},
-        "label": "Prometheus Datasource"
+        "w": 8,
+        "x": 0,
+        "y": 4
       }
-    ]
-  }
+    },
+
+    {
+      "id": 3,
+      "title": "Memory Usage",
+      "type": "timeseries",
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 8,
+        "y": 4
+      }
+    },
+
+    {
+      "id": 4,
+      "title": "Request Rate",
+      "type": "timeseries",
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 16,
+        "y": 4
+      }
+    },
+
+    {
+      "id": 5,
+      "title": "Application Health",
+      "type": "gauge",
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 0,
+        "y": 12
+      }
+    },
+
+    {
+      "id": 6,
+      "title": "Error Rate",
+      "type": "gauge",
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 6,
+        "y": 12
+      }
+    },
+
+    {
+      "id": 7,
+      "title": "Active Users",
+      "type": "stat",
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 12,
+        "y": 12
+      }
+    },
+
+    {
+      "id": 8,
+      "title": "Transactions",
+      "type": "stat",
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 18,
+        "y": 12
+      }
+    },
+
+    {
+      "id": 9,
+      "title": "Server Requests",
+      "type": "timeseries",
+      "gridPos": {
+        "h": 10,
+        "w": 16,
+        "x": 0,
+        "y": 18
+      }
+    },
+
+    {
+      "id": 10,
+      "title": "Service Breakdown",
+      "type": "barchart",
+      "gridPos": {
+        "h": 10,
+        "w": 8,
+        "x": 16,
+        "y": 18
+      }
+    }
+  ]
 }
