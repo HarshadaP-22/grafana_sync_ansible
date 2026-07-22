@@ -1,0 +1,146 @@
+{
+  "uid": "cdisynew-home",
+  "title": "cdisynew Web Home Dashboard",
+  "timezone": "browser",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "30s",
+  "tags": [
+    "cdisynew",
+    "self-service",
+    "git-sync"
+  ],
+  "panels": [
+    {
+      "id": 1,
+      "type": "text",
+      "title": "",
+      "gridPos": {
+        "h": 5,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "options": {
+        "mode": "html",
+        "content": "<div style='display:flex;align-items:center;gap:24px;padding:20px 32px;background:linear-gradient(135deg,#FF9E1B 0%,#FF5A00 100%);border-radius:40px;'><div style='display:flex;flex-direction:column;'><div style='font-size:2.4vw;font-weight:600;color:#FFFFFF;line-height:1.1;'>Welcome to cdisynew Web Home Dashboard</div><div style='font-size:1vw;color:#FFFFFF;margin-top:8px;'>This dashboard provides real-time monitoring and health status for cdisynew.</div></div></div>."
+      }
+    },
+    {
+      "id": 2,
+      "type": "stat",
+      "title": "CPU Usage",
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "datasource": {
+        "type": "-- Grafana --",
+        "uid": "-- Grafana --"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "queryType": "randomWalk"
+        }
+      ],
+      "options": {
+        "reduceOptions": {
+          "values": false,
+          "calcs": [
+            "lastNotNull"
+          ]
+        }
+      }
+    },
+    {
+      "id": 3,
+      "type": "timeseries",
+      "title": "Memory Usage",
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
+      "datasource": {
+        "type": "-- Grafana --",
+        "uid": "-- Grafana --"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "queryType": "randomWalk"
+        }
+      ],
+      "options": {
+        "reduceOptions": {
+          "values": false,
+          "calcs": [
+            "lastNotNull"
+          ]
+        }
+      }
+    },
+    {
+      "id": 4,
+      "type": "timeseries",
+      "title": "Application Health",
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 16,
+        "y": 4
+      },
+      "datasource": {
+        "type": "-- Grafana --",
+        "uid": "-- Grafana --"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "queryType": "randomWalk"
+        }
+      ],
+      "options": {
+        "reduceOptions": {
+          "values": false,
+          "calcs": [
+            "lastNotNull"
+          ]
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "Error Rate",
+      "type": "gauge",
+      "datasource": {
+        "name": "-- Grafana --",
+        "uid": "-- Grafana --"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "queryType": "randomWalk"
+        }
+      ],
+      "options": {
+        "reduceOptions": {
+          "values": false,
+          "calcs": [
+            "lastNotNull"
+          ]
+        }
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 16,
+        "x": 0,
+        "y": 18
+      }
+    }
+  ]
+}
