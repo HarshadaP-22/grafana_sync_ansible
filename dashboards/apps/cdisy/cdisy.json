@@ -1,6 +1,6 @@
 {
   "uid": "cdisy-home",
-  "title": "CDISY Home Dashboard",
+  "title": "CDISY Web Home Dashboard",
   "timezone": "browser",
   "schemaVersion": 39,
   "version": 1,
@@ -23,7 +23,7 @@
       },
       "options": {
         "mode": "html",
-        "content": "<div style='display:flex;align-items:center;gap:24px;padding:20px 32px;background:linear-gradient(135deg,#FF9E1B 0%,#FF5A00 100%);border-radius:40px;'><div style='display:flex;flex-direction:column;'><div style='font-size:2.4vw;font-weight:600;color:#FFFFFF;line-height:1.1;'>Welcome to CDISY Monitoring Dashboard</div><div style='font-size:1vw;color:#FFFFFF;margin-top:8px;'>This dashboard provides real-time monitoring and health status for CDISY.</div></div></div>."
+        "content": "<div style='display:flex;align-items:center;gap:24px;padding:20px 32px;background:linear-gradient(135deg,#FF9E1B 0%,#FF5A00 100%);border-radius:40px;'><div style='display:flex;flex-direction:column;'><div style='font-size:2.4vw;font-weight:600;color:#FFFFFF;line-height:1.1;'>Welcome to CDISY Web Home Dashboard</div><div style='font-size:1vw;color:#FFFFFF;margin-top:8px;'>This dashboard provides real-time monitoring and health status for CDISY.</div></div></div>."
       }
     },
     {
