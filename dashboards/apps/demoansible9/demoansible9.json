@@ -59,8 +59,8 @@
                   "showLineNumbers": false,
                   "showMiniMap": false
                 },
-                "content": "# demoansible9 Monitoring Dashboard\n\nThis dashboard provides real-time monitoring and health status for demoansible9.",
-                "mode": "markdown"
+                "content": "\u003cdiv style=\"\ndisplay: flex;\nalign-items: center;\ngap: 24px;\npadding: 20px 32px;\nbackground: linear-gradient(135deg, #FF9E1B 0%, #FF5A00 100%);\nborder-radius: 40px;\n\"\u003e\n\n\u003cimg src=\"https://prometheus-configs.gsk.com/prom-configs/prom-ehsblackbox.gsk.com/images/GSK_logo_white.png\" height=\"80\" style=\"width: auto;\" /\u003e\n\n\u003cdiv style=\"display: flex; flex-direction: column;\"\u003e\n\n\n\u003cdiv style=\"\nfont-size: 2.4vw;\nfont-weight: 600;\ncolor: #FFFFFF;\nline-height: 1.1;\n\"\u003e\nWelcome to Command Center Portfolio Team\n\u003c/div\u003e\n\n\n\u003c/div\u003e\n\u003c/div\u003e",
+                "mode": "html"
               }
             },
             "version": "13.1.0"
