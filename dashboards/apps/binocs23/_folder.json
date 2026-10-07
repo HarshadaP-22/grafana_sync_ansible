@@ -2,9 +2,9 @@
   "apiVersion": "folder.grafana.app/v1",
   "kind": "Folder",
   "metadata": {
-    "name": "glamsone"
+    "name": "binocs23"
   },
   "spec": {
-    "title": "GlamsOne"
+    "title": "Binocs23"
   }
 }

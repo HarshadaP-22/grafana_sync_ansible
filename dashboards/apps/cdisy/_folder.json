@@ -2,9 +2,9 @@
   "apiVersion": "folder.grafana.app/v1",
   "kind": "Folder",
   "metadata": {
-    "name": "glams"
+    "name": "cdisy"
   },
   "spec": {
-    "title": "Glams"
+    "title": "CDISY"
   }
 }
